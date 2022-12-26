@@ -1,4 +1,6 @@
-﻿namespace st_movie_details;
+﻿using st_movie_details.MVVM.Views;
+
+namespace st_movie_details;
 
 public partial class App : Application
 {
@@ -6,6 +8,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new SearchView();
 	}
 }

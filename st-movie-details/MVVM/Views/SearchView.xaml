@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="st_movie_details.MVVM.Views.SearchView"
+             Title="Search Movies">
+    <VerticalStackLayout>
+        <SearchBar
+                x:Name="searchBar"
+                Placeholder="Search"
+                SearchCommand="{Binding SearchCommand}"
+                SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}" />
+        <CollectionView ItemsSource="{Binding Movies}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding title}" TextColor="{StaticResource Yellow100Accent}" />
+                            <Label Text="{Binding release_date}" />
+                            <Label Text="{Binding overview}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
